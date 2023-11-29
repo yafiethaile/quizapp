@@ -3,7 +3,7 @@ import Quiz from './quiz'
 export default function easyQuizPage () {
     return (
     <div>
-        <h1 className="text-4xl font-bold text-center">Easy Quiz </h1>
+        <h1 className="text-4xl text-center">Quiz Level: HARDCORE </h1>
         <Quiz />
         
     </div>
