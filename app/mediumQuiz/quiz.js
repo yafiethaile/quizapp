@@ -4,34 +4,52 @@ import React, { useState } from 'react';
 const Quiz = () => {
   const questions = [
     {
-      question: 'Who is the main protagonist of Dragon Ball?',
-      options: ['Vegeta', 'Piccolo', 'Goku', 'Gohan'],
-      correctAnswer: 'Goku',
+      question: 'Who kills Freeza?',
+      options: ['Vegeta', 'Piccolo', 'Goku', 'Future Trunks'],
+      correctAnswer: 'Future Trunks',
     },
 
     {
-      question: 'Who are Goku\'s sons?',
-      options: ['Gohan & Goten', 'Gohan and Trunks', 'Goten & Trunks', 'Goten & Krillin'],
-      correctAnswer: 'Gohan & Goten',
+      question: 'What is the name of the thing saiyans transform into when they look at a full moon?',
+      options: ['Super Saiyan 3', 'Super Simian', 'Giant Monkey', 'Great Ape'],
+      correctAnswer: 'Great Ape',
     },
 
     {
-      question: 'What is Goku\'s race?',
-      options: ['Human', 'Namekian', 'Saiyan', 'Human'],
-      correctAnswer: 'Saiyan',
+      question: 'What is Goku\'s real name?',
+      options: ['Turles', 'Kakarot', 'Bojack', 'Nappa'],
+      correctAnswer: 'Kakarot',
     },
 
     {
-      question: 'Who is the main antagonist of the first story arc of Dragon Ball Z?',
-      options: ['Nappa', 'Raditz', 'Vegeta', 'Freeza'],
-      correctAnswer: 'Vegeta',
+      question: 'What is the name of the God Of Destruction in Universe 7?',
+      options: ['Whis', 'Bills', 'Beerus', 'Champa'],
+      correctAnswer: 'Beerus',
     },
 
     {
-      question: 'What is the name of the first major transformation of Dragon Ball Z?',
-      options: ['Fusion', 'Ultra Instinct', 'Super Saiyan', 'Kaioken'],
-      correctAnswer: 'Super Saiyan',
-    }
+      question: 'Who defeats Super Perfect Cell?',
+      options: ['Goku', 'Gohan', 'Vegeta', 'Trunks'],
+      correctAnswer: 'Gohan',
+    },
+
+    {
+      question: 'What do the Z fighters use to heal their wounds instantly?',
+      options: ['Senzu', 'Power Pole', 'Nimbus', 'Capsule Corp.'],
+      correctAnswer: 'Senzu',
+    },
+
+    {
+      question: 'Which techniques does Goku learn from King Kai?',
+      options: ['Solar Flare and Kamehameha', 'Kamehameha and Spirit Bomb', 'Kaioken and Kamehameha', 'Kaioken and Spirit Bomb'],
+      correctAnswer: 'Kaioken and Spirit Bomb',
+    },
+
+    {
+      question: 'What is the name of the fusion between Goku and Vegeta? (fusion dance)',
+      options: ['Gokuta', 'Vegito', 'Vegeku', 'Gogeta'],
+      correctAnswer: 'Gogeta',
+    },
 
     // Add more questions as needed
   ];
@@ -63,21 +81,21 @@ const Quiz = () => {
   const totalQuestions = questions.length;
 
   return (
-    <div className="border p-4">
+    <div className="border p-4 rounded text-black">
       {showScore ? (
         <div className="flex flex-col items-center">
-          <h2 className="mb-4 text-xl font-bold text-white">Your Score: {score} / {totalQuestions}</h2>
+          <h2 className="mb-4 text-xl font-bold text-black">Your Score: {score} / {totalQuestions}</h2>
           <button onClick={restartQuiz} className="bg-orange-300 text-black py-2 px-4 rounded hover:bg-orange-400
-          moveable-button group active:translate-x-2 transition-transform">Restart Quiz</button>
+          border border-black moveable-button group active:translate-x-2 transition-transform">Restart Quiz</button>
         </div>
       ) : (
         <div>
-          <h2 className="mb-4 text-xl font-bold text-white">Question {currentQuestion + 1}/{totalQuestions}</h2>
+          <h2 className="mb-4 text-xl font-bold text-black">Question {currentQuestion + 1}/{totalQuestions}</h2>
           <p className="mb-4">{questions[currentQuestion].question}</p>
           <ul className="flex flex-col gap-4">
             {questions[currentQuestion].options.map((option, index) => (
               <li key={index} onClick={() => handleOptionClick(option)} className="border p-2 cursor-pointer text-black bg-orange-300 hover:bg-orange-400 
-              moveable-button group active:translate-x-2 transition-transform">
+              moveable-button group active:translate-x-2 transition-transform moveable-button group hover:translate-y-1 transition-transform">
                 {option}
               </li> 
             ))}

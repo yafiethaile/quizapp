@@ -63,21 +63,21 @@ const Quiz = () => {
   const totalQuestions = questions.length;
 
   return (
-    <div className="border p-4">
+    <div className="border p-4 rounded text-black">
       {showScore ? (
         <div className="flex flex-col items-center">
-          <h2 className="mb-4 text-xl font-bold text-white">Your Score: {score} / {totalQuestions}</h2>
+          <h2 className="mb-4 text-xl font-bold text-black">Your Score: {score} / {totalQuestions}</h2>
           <button onClick={restartQuiz} className="bg-orange-300 text-black py-2 px-4 rounded hover:bg-orange-400
-          moveable-button group active:translate-x-2 transition-transform">Restart Quiz</button>
+          border border-black moveable-button group active:translate-x-2 transition-transform">Restart Quiz</button>
         </div>
       ) : (
         <div>
-          <h2 className="mb-4 text-xl font-bold text-white">Question {currentQuestion + 1}/{totalQuestions}</h2>
+          <h2 className="mb-4 text-xl font-bold text-black">Question {currentQuestion + 1}/{totalQuestions}</h2>
           <p className="mb-4">{questions[currentQuestion].question}</p>
           <ul className="flex flex-col gap-4">
             {questions[currentQuestion].options.map((option, index) => (
               <li key={index} onClick={() => handleOptionClick(option)} className="border p-2 cursor-pointer text-black bg-orange-300 hover:bg-orange-400 
-              moveable-button group active:translate-x-2 transition-transform">
+              moveable-button group active:translate-x-2 transition-transform moveable-button group hover:translate-y-1 transition-transform">
                 {option}
               </li> 
             ))}

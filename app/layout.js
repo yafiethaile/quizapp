@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Link } from 'react-router-dom'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,7 @@ export const metadata = {
 const Header = () => {
   return (
     <header style={headerStyle}>
-      <h1 style={{ color:'fff' }}>Dragon Ball Quiz</h1>
+      <h1 style={{ color:'000000' }}>Dragon Ball Quiz</h1>
     </header>
   );
 }
@@ -31,6 +32,7 @@ const Footer = () => {
   );
 }
 
+
 const footerStyle = {
   backgroundColor: '#ff9922', 
   padding: '30px',
@@ -41,6 +43,7 @@ const footerStyle = {
   bottom: '0',
   width: '100%',
 };
+
 
 export default function RootLayout({ children }) {
   return (
